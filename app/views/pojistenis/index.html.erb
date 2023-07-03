@@ -1,0 +1,42 @@
+<article>
+
+  <p style="color: green"><%= notice %></p>
+
+  <header>
+    <h1>Seznam pojištění</h1> 
+    <div id="box">
+      <%= link_to "Nové pojištění", new_pojisteni_path, class: "button", id:"zeleny" %>
+    </div>
+  </header>
+
+  <section>
+  
+    <table>
+      <thead>
+        <th>id</th>
+        <th>Název</th>
+        <th>Akce</th>
+      </thead>
+      <tbody>
+        <% @pojistenis.each do |pojisteni| %>
+        <tr>
+          <td>
+            <%= pojisteni.id %>
+          </td>
+          <td>
+            <%= pojisteni.nazev %>
+          </td>
+          <td>
+            <div id="box">
+              <%= link_to "Upravit", edit_pojisteni_path(pojisteni), class:"button", id:"zeleny" %> 
+              <%= button_to "Smazat", pojisteni, method: :delete, class:"button", id:"cerveny" %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </section>
+
+</article>

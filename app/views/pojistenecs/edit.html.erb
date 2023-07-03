@@ -1,0 +1,17 @@
+<article>
+
+  <h2>Úprava pojištěnce</h2>
+  
+  <%= render "form", pojistenec: @pojistenec %>
+  
+  <br>
+  
+  <div>
+
+    <%= link_to "Otevřít záznam", @pojistenec, class:"button", id:"zeleny" %>
+  
+    <%= link_to "K pojistěncům", pojistenecs_path, class:"button", id:"zeleny" %>
+
+  </div>
+
+</article>

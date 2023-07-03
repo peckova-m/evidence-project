@@ -1,0 +1,13 @@
+<article>
+  
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @pojisteni %>
+
+  <div id="box">
+    <%= link_to "Upravit", edit_pojisteni_path(@pojisteni), class:"button", id:"zeleny" %>
+    <%= link_to "Zpět k seznamu pojištění", pojistenis_path, class:"button", id:"zeleny" %>
+    <%= button_to "Odstranit", @pojisteni, method: :delete, class:"button", id:"cerveny" %>
+  </div>
+
+</article>

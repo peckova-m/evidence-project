@@ -1,0 +1,44 @@
+<header>
+
+  <h1>Detail pojištění</h1>
+
+</header>
+
+<section>
+
+  <div id="box">
+
+    <%= link_to "Upravit", edit_aktivni_pojisteni_path(aktivni_pojisteni), class:"button", id:"zeleny" %>
+
+    <%= button_to "Smazat", aktivni_pojisteni, method: :delete, class:"button", id:"cerveny" %>
+
+    <br>
+
+  </div>
+
+  <table id="info">
+      
+    <tr>
+        
+      <td>ID Pojištěnce:</td>
+      <td><%= aktivni_pojisteni.pojistenec_id %></td>
+
+    </tr>
+
+    <tr>
+
+      <td>ID Pojištění:</td>
+      <td><%= aktivni_pojisteni.pojisteni_id %></td>
+        
+    </tr>
+
+    <tr>
+
+      <td>Měsíční částka v KČ:</td>
+      <td><%= aktivni_pojisteni.castka %></td>
+
+    </tr>
+      
+  </table>
+
+</section>

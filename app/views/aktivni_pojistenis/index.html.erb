@@ -1,0 +1,61 @@
+<article>
+
+  <p style="color: green"><%= notice %></p>
+
+  <header>
+  
+    <h1>Pojištění</h1>
+  
+    <div id="box">
+      <%= link_to "Nové Pojištění", new_aktivni_pojisteni_path, class: "button", id:"zeleny" %>
+      <%= link_to "Seznam pojistění", pojistenis_path, class:"button", id:"zeleny" %>
+    </div>
+  
+  </header>
+  
+  <section>
+  
+    <table>
+
+      <thead>
+
+        <th>Pojištěný</th>
+
+        <th>Pojištění</th>
+        
+        <th>Měsíční částka v kč</th></td>
+        
+        <th>Akce</th>
+      
+      </thead>
+  
+      <tbody>
+
+        <% @aktivni_pojistenis.each do |aktivni_pojisteni| %>
+
+        <tr>
+
+          <td><%= aktivni_pojisteni.pojistenec_id %></td>
+
+          <td><%= aktivni_pojisteni.pojisteni_id %></td>
+
+          <td><%= aktivni_pojisteni.castka %></td>
+
+          <td>
+            <div id="box">
+            <%= link_to "Zobrazit", aktivni_pojisteni, class:"button", id:"zeleny" %> 
+            <%= link_to "Upravit", edit_aktivni_pojisteni_path(aktivni_pojisteni), class:"button", id:"zeleny" %> 
+            <%=link_to "Smazat", aktivni_pojisteni, method: :delete, data: { confirm: 'Opravdu chtete smazat tento záznam?' }, class:"button", id:"cerveny" %>
+            </div>
+          </td>
+        </tr>
+
+        <% end %>
+
+      </tbody>
+
+    </table>
+
+  </section>
+
+</article>

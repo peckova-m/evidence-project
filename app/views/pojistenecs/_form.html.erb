@@ -1,0 +1,52 @@
+<%= form_with(model: pojistenec) do |form| %>
+  <% if pojistenec.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pojistenec.errors.count, "error") %> prohibited this pojistenec from being saved:</h2>
+
+      <ul>
+        <% pojistenec.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :"Jméno", style: "display: block" %>
+    <%= form.text_field :jmeno %>
+  </div>
+
+  <div>
+    <%= form.label :"Příjmení", style: "display: block" %>
+    <%= form.text_field :prijmeni %>
+  </div>
+
+  <div>
+    <%= form.label :"Datum narození", style: "display: block" %>
+    <%= form.date_field :datum_narozeni %>
+  </div>
+
+  <div>
+    <%= form.label :"Telefon", style: "display: block" %>
+    <%= form.text_field :telefon %>
+  </div>
+
+  <div>
+    <%= form.label :"E-mail", style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :"Ulice + čp.", style: "display: block" %>
+    <%= form.text_area :ulice %>
+  </div>
+
+  <div>
+    <%= form.label :"Město + psč", style: "display: block" %>
+    <%= form.text_area :mesto %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jmeno: MyString
+  prijmeni: MyString
+  datum_narozeni: 2023-07-03
+  telefon: MyString
+  email: MyString
+  ulice: MyText
+  mesto: MyText
+
+two:
+  jmeno: MyString
+  prijmeni: MyString
+  datum_narozeni: 2023-07-03
+  telefon: MyString
+  email: MyString
+  ulice: MyText
+  mesto: MyText

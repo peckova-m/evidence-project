@@ -1,0 +1,51 @@
+<article>
+
+  <p style="color: green"><%= notice %></p>
+
+  <header>
+    <h1>Pojištěnci</h1>
+    <div id="box">
+      <%= link_to "Nový pojištěněc", new_pojistenec_path, class: "button", id:"zeleny" %>
+    </div>
+  </header>
+  
+  <section>
+
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Jméno</th>
+        <th>Datum narození</th>
+        <th>Adresa</th>
+        <th>Akce</th>
+      </thead>
+      <tbody>
+        <% @pojistenecs.each do |pojistenec| %>
+        <tr>
+          <td>
+            <%= pojistenec.id %>
+          </td>
+          <td>
+            <%= pojistenec.jmeno %> <%= pojistenec.prijmeni %>
+          </td>
+          <td>
+            <%= pojistenec.datum_narozeni %>
+          </td>
+          <td>
+            <%= pojistenec.ulice %>, <%= pojistenec.mesto%>
+          </td>
+          <td>
+            <div id="box">
+              <%= link_to "Zobrazit", pojistenec, class:"button", id:"zeleny" %> 
+              <%= link_to "Upravit", edit_pojistenec_path(pojistenec), class:"button", id:"zeleny" %> 
+              <%= button_to "Smazat", pojistenec, method: :delete, class:"button", id:"cerveny" %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  
+  </section>
+
+</article>

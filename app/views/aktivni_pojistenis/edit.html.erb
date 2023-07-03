@@ -1,0 +1,15 @@
+<article>
+
+  <h1>Úprava Pojištění</h1>
+
+  <%= render "form", aktivni_pojisteni: @aktivni_pojisteni %>
+
+  <br>
+
+  <div>
+    <%= link_to "Otevřít záznam", @aktivni_pojisteni, class:"button", id:"zeleny" %>
+
+    <%= link_to "K pojištění", aktivni_pojistenis_path, class:"button", id:"zeleny" %>
+  </div>
+  
+</article>

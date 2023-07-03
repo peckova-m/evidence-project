@@ -1,0 +1,55 @@
+<header>
+
+  <h1>Pojištěnec <%= pojistenec.jmeno %> <%= pojistenec.prijmeni %></h1>
+
+</header>
+
+<section>
+
+  <div id="box">
+
+    <%= link_to "Upravit", edit_pojistenec_path(pojistenec), class:"button", id:"zeleny" %>
+
+    <%= button_to "Smazat", pojistenec, method: :delete, class:"button", id:"cerveny" %>
+
+    <br>
+
+  </div>
+
+  <table id="info">
+
+    <tr>
+
+      <td>Datum narození</td>
+
+      <td><%= pojistenec.datum_narozeni %></td>
+    
+    </tr>
+
+    <tr>
+
+      <td>Adresa:</td>
+
+      <td><%= pojistenec.ulice %>, <%= pojistenec.mesto %></td>
+      
+    </tr>
+
+    <tr>
+
+      <td>Telefon:</td>
+
+      <td><%= pojistenec.telefon %></td>
+
+    </tr>
+
+    <tr>
+
+      <td>Email:</td>
+
+      <td><%= pojistenec.email %></td>
+
+    </tr>
+
+  </table>
+  
+</section>
